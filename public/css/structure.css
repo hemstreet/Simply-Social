@@ -11,3 +11,13 @@
   max-width: 1024px;
   margin: 0 auto;
 }
+.col {
+  display: inline-block;
+}
+.grid.col {
+  width: 31%;
+  margin-right: 3%;
+}
+.grid.col:last-of-type {
+  margin-right: 0;
+}

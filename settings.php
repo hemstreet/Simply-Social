@@ -3,13 +3,11 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Simply Social</title>
-    <script src="/public/js/jquery-1.11.1.min.js"></script>
-    <!--    <script src="/static/js/simplysocial.js"></script>-->
-    <link rel="stylesheet" href="/public/css/simplysocial.css">
+    <?php include('views/_head.php'); ?>
 </head>
 <body>
-    <?php include('views/header.php'); ?>
+    <?php include('views/_header.php'); ?>
     Settings
-    <?php include('views/footer.php'); ?>
+    <?php include('views/_footer.php'); ?>
 </body>
 </html>

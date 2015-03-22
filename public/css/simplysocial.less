@@ -2,6 +2,97 @@
 @darkPrimary : #00b286;
 @accent: #f4f5f6;
 @navBg: #262728;
+@navAccent: #43474A;
 
 @textPrimary: #abaeb0;
 @textSecondary: #e6e8eb;
+@border: #DEE1E5;
+
+.navigation {
+	background: @navBg;
+	padding: 15px;
+}
+
+.logo {
+	overflow: hidden;
+	display: inline-block;
+	height: 25px;
+}
+
+.menu {
+	display:inline-block;
+}
+.rounded {
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+input {
+	background: none;
+	border: 1px solid @accent;
+	padding:10px;
+}
+
+.search {
+	border-color: @navAccent;
+	color: @navAccent;
+	background: url('/public/images/header/search-glass.png') no-repeat center right;
+}
+
+.message {
+	display: inline-block;
+}
+
+.disclosure {
+	background: url('/public/images/header/profile-disclosure.png') no-repeat center right;
+}
+
+.hero {
+	background: url('/public/images/header/background.jpg');
+	background-size: cover;
+	padding: 100px 0 0 0;
+	margin-bottom: 50px;
+	input {
+		width: 100%;
+		border: 0;
+		font-size: 2em;
+	}
+	a {
+		text-decoration: none;
+		color: #fff;
+	}
+	.highlight {
+		padding: 25px;
+		width: 25%;
+		margin: 0 auto;
+		background: rgba(57, 185, 152, 0.7);
+		* {
+			color: rgb(156, 221,210);
+		}
+	}
+
+	.list {
+		text-align: center;
+		margin-top: 100px;
+		li {
+			display: inline-block;
+			padding: 3px;
+		}
+		a:hover {
+			border-bottom: 3px solid @primary;
+		}
+	}
+}
+
+.post {
+	border: 1px solid @border;
+	color: @textPrimary;
+	padding:25px;
+	margin-bottom: 25px;
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+	&.list {
+		width: 50%;
+		margin: 0 auto 25px auto;
+	}
+}

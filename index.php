@@ -3,13 +3,26 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Simply Social</title>
-    <script src="/public/js/jquery-1.11.1.min.js"></script>
-    <!--    <script src="/static/js/simplysocial.js"></script>-->
-    <link rel="stylesheet" href="/public/css/simplysocial.css">
+    <?php include('views/_head.php'); ?>
 </head>
 <body>
-    <?php include('views/header.php'); ?>
-    Index
-    <?php include('views/footer.php'); ?>
+    <?php include('views/_header.php'); ?>
+    <div class="hero">
+        <div class="highlight rounded">
+            <input type="text" value="What's on your mind?"/>
+            <a href="#" class="photo">Add Photo</a>
+            <a href="#" class="video">Add Video</a>
+        </div>
+        <ul class="container list toggle">
+            <li><a href="#">All Posts</a></li>
+            <li><a href="#">Photos</a></li>
+            <li><a href="#">Videos</a></li>
+        </ul>
+    </div>
+    <div class="container content">
+        <?php include('views/_list.php'); ?>
+
+    </div>
+    <?php include('views/_footer.php'); ?>
 </body>
 </html>

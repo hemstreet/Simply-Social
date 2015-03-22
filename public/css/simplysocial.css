@@ -1,0 +1,80 @@
+.navigation {
+  background: #262728;
+  padding: 15px;
+}
+.logo {
+  overflow: hidden;
+  display: inline-block;
+  height: 25px;
+}
+.menu {
+  display: inline-block;
+}
+.rounded {
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+input {
+  background: none;
+  border: 1px solid #f4f5f6;
+  padding: 10px;
+}
+.search {
+  border-color: #43474a;
+  color: #43474a;
+  background: url('/public/images/header/search-glass.png') no-repeat center right;
+}
+.message {
+  display: inline-block;
+}
+.disclosure {
+  background: url('/public/images/header/profile-disclosure.png') no-repeat center right;
+}
+.hero {
+  background: url('/public/images/header/background.jpg');
+  background-size: cover;
+  padding: 100px 0 0 0;
+  margin-bottom: 50px;
+}
+.hero input {
+  width: 100%;
+  border: 0;
+  font-size: 2em;
+}
+.hero a {
+  text-decoration: none;
+  color: #fff;
+}
+.hero .highlight {
+  padding: 25px;
+  width: 25%;
+  margin: 0 auto;
+  background: rgba(57, 185, 152, 0.7);
+}
+.hero .highlight * {
+  color: #9cddd2;
+}
+.hero .list {
+  text-align: center;
+  margin-top: 100px;
+}
+.hero .list li {
+  display: inline-block;
+  padding: 3px;
+}
+.hero .list a:hover {
+  border-bottom: 3px solid #00cc99;
+}
+.post {
+  border: 1px solid #dee1e5;
+  color: #abaeb0;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+.post:last-of-type {
+  margin-bottom: 0;
+}
+.post.list {
+  width: 50%;
+  margin: 0 auto 25px auto;
+}

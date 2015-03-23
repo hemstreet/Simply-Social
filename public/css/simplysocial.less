@@ -7,6 +7,7 @@
 @textPrimary: #abaeb0;
 @textSecondary: #e6e8eb;
 @border: #DEE1E5;
+@submit: #00b286;
 
 // Because the font in PSD is not proxima nova which was included in resources file
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
@@ -14,6 +15,9 @@
 body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
+	* {
+		outline: none;
+	}
 }
 
 body.list {
@@ -45,20 +49,44 @@ body.grid {
 	position: fixed;
 	z-index: 2;
 	padding:25px;
-	background: #fff;
+	background: #dee1e5;
 	top: 50%;
 	left: 50%;
+	h3 {
+		color: #70767f;
+		text-transform: capitalize;
+	}
 	.close {
 		background: url('/public/images/modal-close.png');
 		width: 21px;
 		height: 21px;
 		position: absolute;
-		top: -25px;
+		top: -65px;
 		right: -25px;
 	}
+	a {
+		margin-top: 35px;
+		display: inline-block;
+		color: #70767f;
+	}
+	.submit {
+		float: right;
+		margin: 25px 0 0 0;
+	}
 }
-
 .modal {
+	.hero,
+	.navigation,
+	.content,
+	.footer {
+		* {
+			-webkit-filter: blur(2px);
+			-moz-filter: blur(2px);
+			-o-filter: blur(2px);
+			-ms-filter: blur(2px);
+			filter: blur(2px);
+		}
+	}
 	.underlay {
 		display: block;
 	}
@@ -77,6 +105,7 @@ body.grid {
 		height: 52px;
 		margin-left: 20px;
 		position: relative;
+		padding-right: 13px;
 		&:hover .dropdown {
 			opacity: 1;
 		}
@@ -91,8 +120,8 @@ body.grid {
 }
 
 .rounded {
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
 }
 
 .logo {
@@ -133,16 +162,16 @@ input[type="email"] {
 }
 
 input.search {
-	@searchWidth: 150px;
+	@searchWidth: 100px;
 	border-color: @navAccent;
-	color: @navAccent;
+	color: @textPrimary;
 	width: @searchWidth;
 	display: inline-block;
-	padding: 6px;
-	background: url('/public/images/header/search-glass.png') no-repeat (@searchWidth - 10) center;
+	background: url('/public/images/header/search-glass.png') no-repeat (@searchWidth + 10) center;
 	position: relative;
 	top: -9px;
 	margin-left: 20px;
+	padding: 6px 25px 6px 6px;
 }
 
 .message {
@@ -181,6 +210,15 @@ input.search {
 			border-bottom: 0;
 		}
 	}
+	.triangle {
+		background: url('/public/images/header/dropdown-triangle.png') no-repeat;
+		position: absolute;
+		width: 10px;
+		height: 10px;
+		display: block;
+		top: -5px;
+		right: 12px;
+	}
 }
 
 .icon {
@@ -188,6 +226,11 @@ input.search {
 	width: 13px;
 	height: 13px;
 	display: inline-block;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
 }
 
 .hero {
@@ -205,10 +248,6 @@ input.search {
 		margin: 0 0 25px 0;
 		padding: 0 0 0 5px;
 	}
-	a {
-		text-decoration: none;
-		color: #fff;
-	}
 	.highlight {
 		padding: 35px;
 		width: 30%;
@@ -223,7 +262,6 @@ input.search {
 	.toggle {
 		width: 55%;
 		text-align: left;
-		position: relative;
 		margin: 55px auto 0 auto;
 		position: relative;
 		li {
@@ -254,20 +292,6 @@ input.search {
 		}
 	}
 
-	.action {
-		background: no-repeat left center;
-		padding-left: 30px;
-	}
-
-	.photo {
-		background-image: url('/public/images/home/add-photo.png');
-		margin-right: 25px;
-	}
-
-	.video {
-		background-image: url('/public/images/home/add-video.png');
-	}
-
 	.action.list,
 	.grid {
 		background-repeat: no-repeat;
@@ -288,6 +312,27 @@ input.search {
 		&.active {
 			background-image: url('/public/images/home/grid-view-active.png');
 		}
+	}
+}
+
+
+.action {
+	background: no-repeat left center;
+	padding-left: 25px;
+}
+
+.photo {
+	background-image: url('/public/images/home/add-photo.png');
+	margin-right: 25px;
+	&.dark {
+		background-image: url('/public/images/add-photo.png');
+	}
+}
+
+.video {
+	background-image: url('/public/images/home/add-video.png');
+	&.dark {
+		background-image: url('/public/images/add-video.png');
 	}
 }
 
@@ -456,10 +501,10 @@ form {
 		color: #3f454d;
 	}
 	.submit {
-		background: @primary;
-		border-color: @primary;
+		background: @submit;
+		border-color: @submit;
 		color: #fff;
-		padding: 10px;
+		padding: 10px 25px;
 		&:hover {
 			cursor: pointer;
 		}
@@ -478,6 +523,13 @@ form {
 	}
 	input[type="checkbox"].radio:checked + label.radio span {
 		background: url('/public/images/checkbox.png') no-repeat -25px 0;
+	}
+	textarea {
+		display: block;
+		margin: 0;
+		resize: none;
+		padding: 15px 0;
+		width: 100%;
 	}
 }
 

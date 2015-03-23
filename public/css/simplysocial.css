@@ -3,6 +3,9 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;
 }
+body * {
+  outline: none;
+}
 body.list .content .grid {
   display: none;
 }
@@ -25,17 +28,40 @@ body.grid .content .list {
   position: fixed;
   z-index: 2;
   padding: 25px;
-  background: #fff;
+  background: #dee1e5;
   top: 50%;
   left: 50%;
+}
+.dialog h3 {
+  color: #70767f;
+  text-transform: capitalize;
 }
 .dialog .close {
   background: url('/public/images/modal-close.png');
   width: 21px;
   height: 21px;
   position: absolute;
-  top: -25px;
+  top: -65px;
   right: -25px;
+}
+.dialog a {
+  margin-top: 35px;
+  display: inline-block;
+  color: #70767f;
+}
+.dialog .submit {
+  float: right;
+  margin: 25px 0 0 0;
+}
+.modal .hero *,
+.modal .navigation *,
+.modal .content *,
+.modal .footer * {
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
 }
 .modal .underlay {
   display: block;
@@ -54,6 +80,7 @@ body.grid .content .list {
   height: 52px;
   margin-left: 20px;
   position: relative;
+  padding-right: 13px;
 }
 .navigation .user:hover .dropdown {
   opacity: 1;
@@ -66,8 +93,8 @@ body.grid .content .list {
   z-index: 1;
 }
 .rounded {
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
 }
 .logo {
   overflow: hidden;
@@ -103,14 +130,14 @@ input[type="email"] {
 }
 input.search {
   border-color: #43474a;
-  color: #43474a;
-  width: 150px;
+  color: #abaeb0;
+  width: 100px;
   display: inline-block;
-  padding: 6px;
-  background: url('/public/images/header/search-glass.png') no-repeat 140px center;
+  background: url('/public/images/header/search-glass.png') no-repeat 110px center;
   position: relative;
   top: -9px;
   margin-left: 20px;
+  padding: 6px 25px 6px 6px;
 }
 .message {
   display: inline-block;
@@ -136,8 +163,8 @@ input.search {
   color: #868b92;
   text-decoration: none;
   text-align: left;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
 }
 .dropdown a:hover {
   background: #e6e8eb;
@@ -148,11 +175,24 @@ input.search {
 .dropdown li:last-of-type {
   border-bottom: 0;
 }
+.dropdown .triangle {
+  background: url('/public/images/header/dropdown-triangle.png') no-repeat;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  display: block;
+  top: -5px;
+  right: 12px;
+}
 .icon {
   background: no-repeat center;
   width: 13px;
   height: 13px;
   display: inline-block;
+}
+a {
+  text-decoration: none;
+  color: #fff;
 }
 .hero {
   background: url('/public/images/header/background.jpg');
@@ -169,10 +209,6 @@ input.search {
   border-left: 1px solid #fff;
   margin: 0 0 25px 0;
   padding: 0 0 0 5px;
-}
-.hero a {
-  text-decoration: none;
-  color: #fff;
 }
 .hero .highlight {
   padding: 35px;
@@ -215,17 +251,6 @@ input.search {
   box-shadow: none;
   -webkit-box-shadow: none;
 }
-.hero .action {
-  background: no-repeat left center;
-  padding-left: 30px;
-}
-.hero .photo {
-  background-image: url('/public/images/home/add-photo.png');
-  margin-right: 25px;
-}
-.hero .video {
-  background-image: url('/public/images/home/add-video.png');
-}
 .hero .action.list,
 .hero .grid {
   background-repeat: no-repeat;
@@ -244,6 +269,23 @@ input.search {
 }
 .hero .grid.active {
   background-image: url('/public/images/home/grid-view-active.png');
+}
+.action {
+  background: no-repeat left center;
+  padding-left: 25px;
+}
+.photo {
+  background-image: url('/public/images/home/add-photo.png');
+  margin-right: 25px;
+}
+.photo.dark {
+  background-image: url('/public/images/add-photo.png');
+}
+.video {
+  background-image: url('/public/images/home/add-video.png');
+}
+.video.dark {
+  background-image: url('/public/images/add-video.png');
 }
 .container.content {
   margin: 50px auto;
@@ -392,10 +434,10 @@ form input {
   color: #3f454d;
 }
 form .submit {
-  background: #00cc99;
-  border-color: #00cc99;
+  background: #00b286;
+  border-color: #00b286;
   color: #fff;
-  padding: 10px;
+  padding: 10px 25px;
 }
 form .submit:hover {
   cursor: pointer;
@@ -414,6 +456,13 @@ form input[type="checkbox"].radio + label.radio span {
 }
 form input[type="checkbox"].radio:checked + label.radio span {
   background: url('/public/images/checkbox.png') no-repeat -25px 0;
+}
+form textarea {
+  display: block;
+  margin: 0;
+  resize: none;
+  padding: 15px 0;
+  width: 100%;
 }
 .footer.navigation {
   background: #fff;

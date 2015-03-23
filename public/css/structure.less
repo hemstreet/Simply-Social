@@ -13,12 +13,39 @@
 }
 
 .col {
-	display: inline-block;
+	display: block;
+	float: left;
 }
-.grid.col {
+.col.three{
 	width: 31%;
 	margin-right: 3%;
+	margin-bottom: 50px;
+}
+
+.col,
+.col.two,{
 	&:last-of-type {
 		margin-right: 0;
 	}
+}
+
+.col.two {
+	width: 48%;
+	margin-right: 3%;
+}
+
+.col.one.third {
+	width: 13%;
+	margin-right: 3%;
+}
+.col.two.third {
+	width: 81%;
+}
+
+.half {
+	width: 50%;
+}
+
+.third {
+	width: 33%;
 }

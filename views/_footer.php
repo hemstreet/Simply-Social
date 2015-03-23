@@ -9,3 +9,5 @@
       </ul>
     </div>
 </div>
+
+<?php include('_dialog.php'); ?>

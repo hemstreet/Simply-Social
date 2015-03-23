@@ -1,21 +1,22 @@
 <?php
 function printGridPost() {
-    $post = '<div class="post rounded grid">Grid post</div>';
     for($x = 0; $x < 3; $x++) {
-        echo $post;
+        echo '<div class="post grid">';
+        include('_post.php');
+        echo '</div>';
     }
 }
 ?>
 
-<div class="grid col">
+<div class="grid col three">
 
     <?php printGridPost(); ?>
 </div>
 
-<div class="grid col">
+<div class="grid col three">
     <?php printGridPost(); ?>
 </div>
 
-<div class="grid col">
+<div class="grid col three">
     <?php printGridPost(); ?>
 </div>

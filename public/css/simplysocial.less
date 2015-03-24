@@ -1,6 +1,6 @@
 .fontFamily (@name, @file) {
 	font-family: @name;
-	src: url('@{file}.eot') format('embedded-opentype'),
+	src: url('@{file}.eot') format('eot'),
 	url('@{file}.woff') format('woff'),
 	url('@{file}.ttf')  format('truetype'),
 	url('@{file}.svg#@{name}') format('svg');
@@ -295,7 +295,7 @@ a {
 	}
 	.highlight {
 		padding: 35px;
-		width: 36%;
+		width: 45%;
 		margin: 0 auto;
 		background: rgba(57, 185, 152, 0.7);
 		* {
@@ -303,9 +303,8 @@ a {
 		}
 	}
 
-
 	.toggle {
-		width: 55%;
+		width: 65%;
 		text-align: left;
 		margin: 80px auto 0 auto;
 		position: relative;

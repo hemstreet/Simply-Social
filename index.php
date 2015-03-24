@@ -15,9 +15,9 @@
         </div>
         <div class="container">
             <ul class="list toggle">
-                <li><a href="#" class="current">All Posts</a></li>
-                <li><a href="#">Photos</a></li>
-                <li><a href="#">Videos</a>
+                <li><a href="index.php" class="current">All Posts</a></li>
+                <li><a href="/photo.php">Photos</a></li>
+                <li><a href="/video.php">Videos</a>
                 <li>
                     <a href="#" class="action list active" data-toggle="list"></a>
                     <a href="#" class="action grid" data-toggle="grid"></a>

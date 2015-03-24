@@ -373,6 +373,7 @@ a {
 .post p {
   clear: both;
   padding-top: 15px;
+  line-height: 25px;
   font-family: 'proxima', sans-serif;
 }
 .post .actions {
@@ -441,8 +442,8 @@ a {
 }
 .social .comment {
   border-top: 1px solid #dee1e5;
-  margin-top: 25px;
-  padding-top: 25px;
+  margin: 25px -25px -25px -25px;
+  padding: 25px;
 }
 .social input {
   width: 96%;
@@ -611,4 +612,110 @@ form textarea {
 }
 .footer.navigation .list li:last-of-type {
   padding-right: 0;
+}
+@media only screen and (max-width: 1300px) {
+  .settings .container.content.third {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .hero div.highlight {
+    width: 50%;
+    text-align: center;
+  }
+  .hero input[type="text"] {
+    text-align: center;
+    border-left: 0 !important;
+  }
+}
+@media only screen and (max-width: 850px) {
+  body.home.grid .col.two.third {
+    width: 100%;
+    margin-top: 25px;
+  }
+}
+@media only screen and (max-width: 760px) {
+  body .col.two {
+    width: 100%;
+    text-align: left;
+  }
+  body .col.three {
+    width: 47%;
+  }
+  body .post .actions {
+    margin-top: 10px;
+  }
+  .settings .container.content.third {
+    width: 75%;
+  }
+}
+@media only screen and (max-width: 650px) {
+  body .col.three {
+    width: 100%;
+  }
+  body .hero .toggle {
+    text-align: center;
+  }
+  body .hero .toggle a.action {
+    display: none;
+  }
+  body .post {
+    margin: 0 auto;
+  }
+  body .post.grid,
+  body .post.list {
+    width: 75%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  body .dialog {
+    width: 75%;
+  }
+  body .hero .toggle {
+    width: 100%;
+  }
+  body .hero .toggle a {
+    margin-right: 0;
+  }
+}
+@media only screen and (max-width: 525px) {
+  body input.search {
+    width: 50px;
+    background: none;
+    margin-left: 15px;
+    padding: 6px;
+  }
+  body .hero div.highlight {
+    width: 100%;
+    padding: 25px 0;
+  }
+  body .hero input {
+    width: 98%;
+  }
+  .settings .container.content {
+    padding-top: 100px;
+  }
+  .settings .container.content.third {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 468px) {
+  .navigation.primary .menu {
+    top: -15px;
+  }
+  .highlight a.action span {
+    display: none;
+  }
+  .footer.navigation li:last-of-type {
+    padding-top: 25px;
+  }
+  .settings input:first-of-type {
+    margin-top: 25px;
+  }
+  .settings .col.two.third {
+    width: 85%;
+    margin: 0 auto;
+    clear: both;
+  }
 }

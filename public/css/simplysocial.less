@@ -428,6 +428,7 @@ a {
 	p {
 		clear: both;
 		padding-top: 15px;
+		line-height: 25px;
 		font-family: @primaryFont;
 	}
 	.actions {
@@ -495,8 +496,9 @@ a {
 	border-top: 1px solid #dee1e5;
 	.comment {
 		border-top: 1px solid #dee1e5;
-		margin-top: 25px;
-		padding-top: 25px;
+		margin: 25px -25px -25px -25px;
+		padding: 25px;
+
 	}
 	input {
 		width: 96%;
@@ -681,5 +683,155 @@ form {
 				padding-right: 0;
 			}
 		}
+	}
+}
+
+@media only screen and (max-width: 1300px) {
+	.settings {
+		.container.content.third {
+			width: 50%;
+		}
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	.hero {
+		div.highlight {
+			width: 50%;
+			text-align: center;
+		}
+		input[type="text"] {
+			text-align: center;
+			border-left: 0 !important; // Remove border javascript places
+		}
+	}
+}
+
+@media only screen and (max-width: 850px) {
+	body.home.grid {
+		.col.two.third {
+			width: 100%;
+			margin-top: 25px;
+		}
+	}
+
+}
+
+@media only screen and (max-width: 760px) {
+	body {
+		.col.two {
+			width: 100%;
+			text-align: left;
+		}
+
+		.col.three {
+			width: 47%;
+		}
+		.post .actions {
+			margin-top: 10px;
+		}
+	}
+
+	.settings {
+		.container.content.third {
+			width: 75%;
+		}
+	}
+
+}
+
+@media only screen and (max-width: 650px) {
+	body {
+		.col.three {
+			width: 100%;
+		}
+		.hero .toggle {
+			text-align: center;
+			a.action {
+				display: none;
+			}
+		}
+		.post {
+			margin: 0 auto;
+			&.grid,
+			&.list {
+				width: 75%;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	body {
+		.dialog {
+			width: 75%;
+		}
+		.hero .toggle {
+			width: 100%;
+			a {
+				margin-right: 0;
+			}
+		}
+	}
+
+}
+
+@media only screen and (max-width: 525px) {
+	body {
+		input.search {
+			width: 50px;
+			background: none;
+			margin-left: 15px;
+			padding: 6px;
+		}
+		.hero {
+			div.highlight {
+				width: 100%;
+				padding: 25px 0;
+			}
+			input {
+				width: 98%;
+			}
+		}
+	}
+
+	.settings {
+		.container.content {
+			padding-top: 100px;
+		}
+		.container.content.third {
+			width: 90%;
+			margin: 0 auto;
+		}
+	}
+}
+
+@media only screen and (max-width: 468px) {
+
+	.navigation.primary {
+		.menu {
+			top: -15px;
+		}
+	}
+	.highlight a.action span {
+		display: none;
+	}
+	.footer.navigation {
+		li:last-of-type {
+			padding-top: 25px;
+		}
+	}
+
+
+	.settings {
+		input:first-of-type {
+			margin-top: 25px;
+		}
+		.col.two.third {
+			width: 85%;
+			margin: 0 auto;
+			clear: both;
+		}
+
 	}
 }

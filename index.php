@@ -10,8 +10,8 @@
     <div class="hero">
         <div class="highlight rounded">
             <input type="text" value="What's on your mind?"/>
-            <a href="#" class="action photo">Add Photo</a>
-            <a href="#" class="action video">Add Video</a>
+            <a href="#" class="action photo"><span>Add Photo</span></a>
+            <a href="#" class="action video"><span>Add Video</span></a>
         </div>
         <div class="container">
             <ul class="list toggle">

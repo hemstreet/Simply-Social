@@ -596,6 +596,17 @@ section {
 		padding-left: 45px;
 	}
 
+	input[type="password"] {
+		&.pass {
+			border: 1px solid @primary;
+			background-image: url('/public/images/settings/password-pass.png');
+			background-position: 12px 6px;
+		}
+		&.fail {
+			border: 1px solid red;
+		}
+	}
+
 	.icon {
 		background: no-repeat 15px center;
 	}

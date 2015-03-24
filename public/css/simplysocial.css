@@ -533,6 +533,14 @@ section {
   font-size: 16px;
   padding-left: 45px;
 }
+.settings .content input[type="password"].pass {
+  border: 1px solid #00cc99;
+  background-image: url('/public/images/settings/password-pass.png');
+  background-position: 12px 6px;
+}
+.settings .content input[type="password"].fail {
+  border: 1px solid red;
+}
 .settings .content .icon {
   background: no-repeat 15px center;
 }

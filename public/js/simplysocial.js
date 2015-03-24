@@ -65,6 +65,30 @@
 
         });
 
+        var $passwordFields = $('.settings form input[type="password"]');
+
+        console.log($passwordFields[0].value !== '', $passwordFields[1].value !== '' );
+
+        $('.settings form input[type="password"]').on('blur', function(e) {
+
+            if(($passwordFields[0].value !== '' && $passwordFields[1].value !== '')) {
+                if($passwordFields[0].value == $passwordFields[1].value) {
+                    $passwordFields.removeClass('fail');
+                    $passwordFields.addClass('pass');
+                }
+                else {
+                    $passwordFields.removeClass('pass');
+                    $passwordFields.addClass('fail');
+                }
+                console.log('filled out');
+            }
+            else {
+                $passwordFields.removeClass('pass');
+                $passwordFields.removeClass('fail');
+            }
+
+        });
+
         // Check if we are on the home page
         if($('body.home').length > 0) {
             var $heroInput = $('.hero input');

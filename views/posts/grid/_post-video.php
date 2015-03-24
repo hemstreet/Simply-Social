@@ -35,20 +35,23 @@ $i = rand(0, 9);
 </div>
 <div class="col two third">
     <div class="content">
-        <div class="col two">
-            <span class="title"><?php echo $names[$i]; ?></span>
-        </div>
-        <div class="col two actions">
-            <?php include('_postDetails.php'); ?>
-        </div>
+        <div class="title"><?php echo $names[$i]; ?></div>
         <p>
             <?php echo $data[$i]; ?>
         </p>
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class="media video"></div>
+<div class="content">
+    <div class="col two">
         <a href="#" class="expand">
-            Expand
+            <span class="label">Expand</span>
             <span class="profile disclosure"></span>
         </a>
-
+    </div>
+    <div class="col two actions">
+        <?php include($_SERVER['DOCUMENT_ROOT'] . '/views/posts/_post-details.php'); ?>
     </div>
 </div>
 <div class="clearfix"></div>

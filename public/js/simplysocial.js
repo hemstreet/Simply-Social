@@ -33,6 +33,17 @@
 
             $('body').removeClass('modal');
 
+        },
+        toggleComments : function($post) {
+            $post.toggleClass('comments');
+
+            if($post.hasClass('comments')) {
+                $('.label', $post)[0].innerHTML = 'Collapse';
+            }
+            else
+            {
+                $('.label', $post)[0].innerHTML = 'Expand';
+            }
         }
     };
 
@@ -47,6 +58,12 @@
     $( document ).ready(function() {
 
         simplySocial.init();
+
+        $('.expand').on('click', function(e) {
+            e.preventDefault();
+            simplySocial.toggleComments($(this.closest('.post')));
+
+        });
 
         // Check if we are on the home page
         if($('body.home').length > 0) {

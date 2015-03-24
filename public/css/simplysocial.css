@@ -1,6 +1,21 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+@font-face {
+  font-family: 'proxima light';
+  src: url('../fonts/proximaNova/ProximaNova-Light.otf') format('opentype');
+}
+@font-face {
+  font-family: 'proxima';
+  src: url('../fonts/proximaNova/ProximaNova-Regular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'proxima semibold';
+  src: url('../fonts/proximaNova/ProximaNova-Semibold.otf') format('opentype');
+}
+@font-face {
+  font-family: 'proxima bold';
+  src: url('../fonts/proximaNova/ProximaNova-Bold.otf') format('opentype');
+}
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'proxima', sans-serif;
   font-size: 15px;
 }
 body * {
@@ -11,6 +26,18 @@ body.list .content .grid {
 }
 body.grid .content .list {
   display: none;
+}
+body.grid .post .actions {
+  margin-top: 22px;
+}
+body.grid .col.one.third {
+  width: 20%;
+}
+body.grid .col.two.third {
+  width: 74%;
+}
+body.grid .media {
+  height: 200px;
 }
 .underlay {
   position: fixed;
@@ -121,7 +148,7 @@ h2 {
 }
 h3 {
   text-transform: uppercase;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'proxima semibold', sans-serif;
   color: #70767f;
   font-size: 13px;
   margin-bottom: 20px;
@@ -208,14 +235,14 @@ a {
 .hero {
   background: url('/public/images/header/background.jpg');
   background-size: cover;
-  padding: 225px 0 0 0;
+  padding: 200px 0 0 0;
   margin-bottom: 50px;
 }
 .hero input {
   width: 100%;
   border: 0;
   font-size: 2em;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'proxima light', sans-serif;
   border-left: 1px solid #fff;
   margin: 0 0 25px 0;
   padding: 0 0 0 5px;
@@ -232,7 +259,7 @@ a {
 .hero .toggle {
   width: 55%;
   text-align: left;
-  margin: 55px auto 0 auto;
+  margin: 80px auto 0 auto;
   position: relative;
 }
 .hero .toggle li {
@@ -245,7 +272,7 @@ a {
   right: 0;
 }
 .hero .toggle a {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'proxima bold', sans-serif;
   text-transform: uppercase;
   padding: 15px 10px;
   margin-right: 15px;
@@ -311,7 +338,7 @@ a {
   margin: 50px auto;
   padding-top: 70px;
 }
-.home.content {
+.home .content {
   padding-top: 0;
 }
 .post {
@@ -319,6 +346,7 @@ a {
   color: #70767f;
   padding: 25px;
   margin-bottom: 25px;
+  position: relative;
 }
 .post:last-of-type {
   margin-bottom: 0;
@@ -341,7 +369,7 @@ a {
 .post p {
   clear: both;
   padding-top: 15px;
-  font: 'Open Sans', sans-serif;
+  font-family: 'proxima', sans-serif;
 }
 .post .actions {
   float: right;
@@ -358,6 +386,40 @@ a {
 .post .disclosure {
   margin-left: 5px;
   height: 10px;
+}
+.post.comments .disclosure {
+  -webkit-transform: rotate(180deg);
+  /* Chrome and other webkit browsers */
+  -moz-transform: rotate(180deg);
+  /* FF */
+  -o-transform: rotate(180deg);
+  /* Opera */
+  -ms-transform: rotate(180deg);
+  /* IE9 */
+  transform: rotate(180deg);
+  /* W3C compliant browsers */
+  /* IE8 and below */
+  filter: progid:DXImageTransform.Microsoft.Matrix(M11=-1, M12=0, M21=0, M22=-1, DX=0, DY=0, SizingMethod='auto expand');
+}
+.post .media {
+  background: url('/public/images/placeholder.jpg');
+  background-size: cover;
+  height: 300px;
+  margin: 25px -25px 0 -25px;
+  position: relative;
+}
+.post .media:hover {
+  cursor: pointer;
+}
+.post .media.video::after {
+  display: block;
+  content: '';
+  background: rgba(0, 0, 0, 0.2) url('../images/post/video-play.png') no-repeat center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 .avatar {
   background: url('/public/images/post/avatars.png') no-repeat 0 0;
@@ -501,7 +563,7 @@ form textarea {
   background: #fff;
   font-size: 11px;
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'proxima semibold', sans-serif;
   border-top: 1px solid #dee1e5;
   margin-top: 50px;
   padding: 25px;

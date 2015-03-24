@@ -1,3 +1,13 @@
+.fontFamily (@name, @file) {
+	font-family: @name;
+	src: url(@file) format('opentype');
+}
+
+@font-face {.fontFamily('proxima light', '../fonts/proximaNova/ProximaNova-Light.otf');}
+@font-face {.fontFamily('proxima', '../fonts/proximaNova/ProximaNova-Regular.otf');}
+@font-face {.fontFamily('proxima semibold', '../fonts/proximaNova/ProximaNova-Semibold.otf');}
+@font-face {.fontFamily('proxima bold', '../fonts/proximaNova/ProximaNova-Bold.otf');}
+
 @primary : #00cc99;
 @darkPrimary : #00b286;
 @accent: rgb(214, 217, 222);
@@ -9,13 +19,10 @@
 @border: #DEE1E5;
 @submit: #00b286;
 
-@primaryFontLight: 'Open Sans', sans-serif;
-@primaryFont: 'Open Sans', sans-serif;
-@primaryFontSemiBold: 'Open Sans', sans-serif;
-@primaryFontBold: 'Open Sans', sans-serif;
-
-// Because the font in PSD is not proxima nova which was included in resources file
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+@primaryFontLight: 'proxima light', sans-serif;
+@primaryFont: 'proxima', sans-serif;
+@primaryFontSemiBold: 'proxima semibold', sans-serif;
+@primaryFontBold: 'proxima bold', sans-serif;
 
 body {
 	font-family: @primaryFont;
@@ -34,6 +41,19 @@ body.list {
 body.grid {
 	.content .list {
 		display: none;
+	}
+	.post .actions {
+		margin-top: 22px;
+	}
+
+	.col.one.third {
+		width: 20%;
+	}
+	.col.two.third {
+		width: 74%;
+	}
+	.media {
+		height: 200px;
 	}
 }
 
@@ -253,7 +273,7 @@ a {
 .hero {
 	background: url('/public/images/header/background.jpg');
 	background-size: cover;
-	padding: 225px 0 0 0;
+	padding: 200px 0 0 0;
 	margin-bottom: 50px;
 	input {
 		width: 100%;
@@ -278,7 +298,7 @@ a {
 	.toggle {
 		width: 55%;
 		text-align: left;
-		margin: 55px auto 0 auto;
+		margin: 80px auto 0 auto;
 		position: relative;
 		li {
 			display: inline-block;
@@ -290,7 +310,7 @@ a {
 			}
 		}
 		a {
-			font-family: @primaryFont;
+			font-family: @primaryFontBold;
 			text-transform: uppercase;
 			padding: 15px 10px;
 			margin-right: 15px;
@@ -370,7 +390,7 @@ a {
 	margin: 50px auto;
 	padding-top: 70px;
 }
-.home.content {
+.home .content {
 	padding-top: 0;
 }
 
@@ -379,6 +399,7 @@ a {
 	color: @textPrimary;
 	padding: 25px;
 	margin-bottom: 25px;
+	position: relative;
 	&:last-of-type {
 		margin-bottom: 0;
 	}
@@ -401,7 +422,7 @@ a {
 	p {
 		clear: both;
 		padding-top: 15px;
-		font: @primaryFont;
+		font-family: @primaryFont;
 	}
 	.actions {
 		float: right;
@@ -418,6 +439,38 @@ a {
 	.disclosure {
 		margin-left: 5px;
 		height: 10px;
+	}
+	&.comments {
+		.disclosure {
+			-webkit-transform: rotate(180deg);     /* Chrome and other webkit browsers */
+			-moz-transform: rotate(180deg);        /* FF */
+			-o-transform: rotate(180deg);          /* Opera */
+			-ms-transform: rotate(180deg);         /* IE9 */
+			transform: rotate(180deg);             /* W3C compliant browsers */
+
+			/* IE8 and below */
+			filter: progid:DXImageTransform.Microsoft.Matrix(M11=-1, M12=0, M21=0, M22=-1, DX=0, DY=0, SizingMethod='auto expand');
+		}
+	}
+	.media {
+		background: url('/public/images/placeholder.jpg');
+		background-size: cover;
+		height: 300px;
+		margin: 25px -25px 0 -25px;
+		position: relative;
+		&:hover {
+			cursor: pointer;
+		}
+		&.video::after {
+			display: block;
+			content: '';
+			background: rgba(0,0,0,0.2) url('../images/post/video-play.png') no-repeat center;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
 	}
 }
 

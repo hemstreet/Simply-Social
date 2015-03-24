@@ -27,38 +27,29 @@ $names = [
 ];
 
 $i = rand(0, 9);
-$hasComments = !!rand(0,1);
 ?>
 
-<div class="col one third">
-    <div class="avatar rounded <?php echo $avatars[$i]; ?>"></div>
-</div>
-<div class="col two third">
-    <div class="content">
-        <div class="col two">
-            <span class="title"><?php echo $names[$i]; ?></span>
-        </div>
-        <div class="col two actions">
-            <?php include($_SERVER['DOCUMENT_ROOT'] . '/views/posts/_post-details.php'); ?>
-        </div>
-        <p>
-            <?php echo $data[$i]; ?>
-        </p>
-    </div>
-</div>
 <div class="clearfix"></div>
-<div class="media photo <?php echo ($hasComments) ? 'clip' : ''; ?>"></div>
-<?php if ($hasComments) { ?>
-    <div class="col one third"></div>
+
+<div class="social">
+    <div class="col one third">
+        <div class="avatar rounded <?php echo $avatars[$i]; ?>"></div>
+    </div>
     <div class="col two third">
         <div class="content">
-            <a href="#" class="expand">
-                <span class="label">Expand</span>
-                <span class="profile disclosure"></span>
-            </a>
+            <div class="col two">
+                <span class="title"><?php echo $names[$i]; ?></span>
+            </div>
+            <div class="col two actions">
+            </div>
+            <p>
+                <?php echo $data[$i]; ?>
+            </p>
         </div>
     </div>
-
-<?php include($_SERVER['DOCUMENT_ROOT'] . '/views/posts/_comments.php'); ?>
-<?php } ?>
+    <div class="clearfix"></div>
+    <div class="comment">
+        <input class="rounded" type="text" placeholder="Reply..."/>
+    </div>
+</div>
 <div class="clearfix"></div>

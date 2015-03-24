@@ -38,6 +38,10 @@ body.grid .col.two.third {
 }
 body.grid .media {
   height: 200px;
+  margin-bottom: 0;
+}
+body.grid .social input {
+  width: 96%;
 }
 .underlay {
   position: fixed;
@@ -401,11 +405,14 @@ a {
   /* IE8 and below */
   filter: progid:DXImageTransform.Microsoft.Matrix(M11=-1, M12=0, M21=0, M22=-1, DX=0, DY=0, SizingMethod='auto expand');
 }
+.post.comments .social {
+  display: inline-block;
+}
 .post .media {
   background: url('/public/images/placeholder.jpg');
   background-size: cover;
   height: 300px;
-  margin: 25px -25px 0 -25px;
+  margin: 25px -25px -25px -25px;
   position: relative;
 }
 .post .media:hover {
@@ -420,6 +427,27 @@ a {
   right: 0;
   bottom: 0;
   left: 0;
+}
+.post .media.clip {
+  margin-bottom: 0;
+}
+.social {
+  display: none;
+  width: 100%;
+  background: #f9fafb;
+  margin: 25px 0 -25px -25px;
+  padding: 25px;
+  border-top: 1px solid #dee1e5;
+}
+.social .comment {
+  border-top: 1px solid #dee1e5;
+  margin-top: 25px;
+  padding-top: 25px;
+}
+.social input {
+  width: 96%;
+  border: 1px solid #dee1e5;
+  background: #fff;
 }
 .avatar {
   background: url('/public/images/post/avatars.png') no-repeat 0 0;

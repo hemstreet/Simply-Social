@@ -27,7 +27,7 @@ $names = [
 ];
 
 $i = rand(0, 9);
-
+$hasComments = !!rand(0,1);
 ?>
 
 <div class="col one third">
@@ -45,13 +45,20 @@ $i = rand(0, 9);
 <div class="media photo"></div>
 <div class="content">
     <div class="col two">
-        <a href="#" class="expand">
-            <span class="label">Expand</span>
-            <span class="profile disclosure"></span>
-        </a>
+        <?php if ($hasComments) { ?>
+            <a href="#" class="expand">
+                <span class="label">Expand</span>
+                <span class="profile disclosure"></span>
+            </a>
+        <?php } ?>
     </div>
     <div class="col two actions">
         <?php include($_SERVER['DOCUMENT_ROOT'] . '/views/posts/_post-details.php'); ?>
     </div>
 </div>
+
+<?php if ($hasComments) { ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'] . '/views/posts/_comments.php'); ?>
+<?php } ?>
+
 <div class="clearfix"></div>

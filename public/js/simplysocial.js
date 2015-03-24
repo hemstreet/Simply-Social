@@ -9,22 +9,20 @@
                 this.openModal();
             }.bind(this));
 
-            $('.dialog .close').on('click', function(e) {
+            $('.dialog .close, .dialog .submit').on('click', function(e) {
                 e.preventDefault();
                 this.closeModal();
             }.bind(this));
 
         },
         openModal: function() {
-            var $body = $('body');
+            var $body   = $('body'),
+                $dialog = $('.dialog');
 
             $body.addClass('modal');
 
-            var $dialog = $('.dialog');
-
             // Lets make sure the dialog is centered in the page
             $dialog.css({
-                'width': $dialog.outerWidth(),
                 'margin-top': -$dialog.outerHeight() / 2,
                 'margin-left': -$dialog.outerWidth() / 2
             });

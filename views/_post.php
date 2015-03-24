@@ -36,7 +36,7 @@ $i = rand(0, 9);
 <div class="col two third">
     <div class="content">
         <div class="col two">
-            <?php echo $names[$i]; ?>
+            <span class="title"><?php echo $names[$i]; ?></span>
         </div>
         <div class="col two actions">
             <?php include('_postDetails.php'); ?>
@@ -44,6 +44,11 @@ $i = rand(0, 9);
         <p>
             <?php echo $data[$i]; ?>
         </p>
+        <a href="#" class="expand">
+            Expand
+            <span class="profile disclosure"></span>
+        </a>
+
     </div>
 </div>
 <div class="clearfix"></div>

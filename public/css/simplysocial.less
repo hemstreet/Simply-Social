@@ -4,16 +4,21 @@
 @navBg: #262728;
 @navAccent: #43474A;
 
-@textPrimary: #abaeb0;
-@textSecondary: #e6e8eb;
+@textPrimary: #70767f;
+@textSecondary: #c3c7d0;
 @border: #DEE1E5;
 @submit: #00b286;
+
+@primaryFontLight: 'Open Sans', sans-serif;
+@primaryFont: 'Open Sans', sans-serif;
+@primaryFontSemiBold: 'Open Sans', sans-serif;
+@primaryFontBold: 'Open Sans', sans-serif;
 
 // Because the font in PSD is not proxima nova which was included in resources file
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 
 body {
-	font-family: 'Open Sans', sans-serif;
+	font-family: @primaryFont;
 	font-size: 15px;
 	* {
 		outline: none;
@@ -52,6 +57,7 @@ body.grid {
 	background: #dee1e5;
 	top: 50%;
 	left: 50%;
+	width: 31%;
 	h3 {
 		color: #70767f;
 		text-transform: capitalize;
@@ -72,6 +78,13 @@ body.grid {
 	.submit {
 		float: right;
 		margin: 25px 0 0 0;
+	}
+}
+
+.message.create {
+	width: 100%;
+	textarea {
+		width: 94%;
 	}
 }
 .modal {
@@ -110,6 +123,12 @@ body.grid {
 			opacity: 1;
 		}
 	}
+	.disclosure {
+		line-height: 32px;
+		height: 32px;
+		margin-left: 15px;
+		background-image: url('/public/images/header/disclosure.png');
+	}
 	&.primary {
 		position: fixed;
 		left: 0;
@@ -138,7 +157,7 @@ h2 {
 
 h3 {
 	text-transform: uppercase;
-	font-weight: 600;
+	font-family: @primaryFontSemiBold;
 	color: @textPrimary;
 	font-size: 13px;
 	margin-bottom: 20px;
@@ -162,7 +181,7 @@ input[type="email"] {
 }
 
 input.search {
-	@searchWidth: 100px;
+	@searchWidth: 150px;
 	border-color: @navAccent;
 	color: @textPrimary;
 	width: @searchWidth;
@@ -180,11 +199,9 @@ input.search {
 
 .disclosure {
 	display: inline-block;
-	background: url('/public/images/header/profile-disclosure.png') no-repeat center right;
+	background: url('/public/images/disclosure.png') no-repeat center right;
 	width: 7px;
-	height: 32px;
-	line-height: 32px;
-	margin-left: 15px;
+	height: 7px;
 }
 
 .dropdown {
@@ -236,14 +253,13 @@ a {
 .hero {
 	background: url('/public/images/header/background.jpg');
 	background-size: cover;
-	padding: 190px 0 0 0;
+	padding: 225px 0 0 0;
 	margin-bottom: 50px;
 	input {
-		font-family: 'Open Sans', sans-serif;
 		width: 100%;
 		border: 0;
 		font-size: 2em;
-		font-weight: 300;
+		font-family: @primaryFontLight;
 		border-left: 1px solid #fff;
 		margin: 0 0 25px 0;
 		padding: 0 0 0 5px;
@@ -274,13 +290,18 @@ a {
 			}
 		}
 		a {
-			padding: 15px 0;
+			font-family: @primaryFont;
+			text-transform: uppercase;
+			padding: 15px 10px;
 			margin-right: 15px;
 			display: inline-block;
 			margin-bottom: -3px;
-			&:last-of-type {
-				margin-right: 0;
+			&.action {
+				padding: 10px;
+				margin: 0;
+				background-position: right bottom;
 			}
+
 		}
 		a:hover {
 			-webkit-box-shadow:inset 0 -10px 0 -7px  @primary;
@@ -336,6 +357,15 @@ a {
 	}
 }
 
+.reply {
+	background-image: url('/public/images/reply.png');
+}
+
+.favorite {
+	background-image: url('/public/images/favorite.png');
+}
+
+
 .container.content {
 	margin: 50px auto;
 	padding-top: 70px;
@@ -356,6 +386,11 @@ a {
 		width: 50%;
 		margin: 0 auto 25px auto;
 	}
+	.title {
+		color: #3f454d;
+		font-size: 16px;
+		display: inline-block;
+	}
 	span,
 	a,
 	.time {
@@ -363,6 +398,11 @@ a {
 		text-decoration: none;
 	}
 
+	p {
+		clear: both;
+		padding-top: 15px;
+		font: @primaryFont;
+	}
 	.actions {
 		float: right;
 		text-align: right;
@@ -370,14 +410,15 @@ a {
 	.icon {
 		margin-right: 15px;
 	}
-}
-
-.reply {
-	background-image: url('/public/images/reply.png');
-}
-
-.favorite {
-	background-image: url('/public/images/favorite.png');
+	.expand {
+		margin-top: 25px;
+		display: inline-block;
+		font-size: 13px;
+	}
+	.disclosure {
+		margin-left: 5px;
+		height: 10px;
+	}
 }
 
 .avatar {
@@ -528,8 +569,8 @@ form {
 		display: block;
 		margin: 0;
 		resize: none;
-		padding: 15px 0;
-		width: 100%;
+		padding: 15px;
+		border: 0;
 	}
 }
 
@@ -537,8 +578,7 @@ form {
 	background: #fff;
 	font-size: 11px;
 	text-align: center;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 600;
+	font-family: @primaryFontSemiBold;
 	border-top: 1px solid @border;
 	margin-top: 50px;
 	padding: 25px;

@@ -31,6 +31,7 @@ body.grid .content .list {
   background: #dee1e5;
   top: 50%;
   left: 50%;
+  width: 31%;
 }
 .dialog h3 {
   color: #70767f;
@@ -52,6 +53,12 @@ body.grid .content .list {
 .dialog .submit {
   float: right;
   margin: 25px 0 0 0;
+}
+.message.create {
+  width: 100%;
+}
+.message.create textarea {
+  width: 94%;
 }
 .modal .hero *,
 .modal .navigation *,
@@ -85,6 +92,12 @@ body.grid .content .list {
 .navigation .user:hover .dropdown {
   opacity: 1;
 }
+.navigation .disclosure {
+  line-height: 32px;
+  height: 32px;
+  margin-left: 15px;
+  background-image: url('/public/images/header/disclosure.png');
+}
 .navigation.primary {
   position: fixed;
   left: 0;
@@ -108,8 +121,8 @@ h2 {
 }
 h3 {
   text-transform: uppercase;
-  font-weight: 600;
-  color: #abaeb0;
+  font-family: 'Open Sans', sans-serif;
+  color: #70767f;
   font-size: 13px;
   margin-bottom: 20px;
 }
@@ -130,10 +143,10 @@ input[type="email"] {
 }
 input.search {
   border-color: #43474a;
-  color: #abaeb0;
-  width: 100px;
+  color: #70767f;
+  width: 150px;
   display: inline-block;
-  background: url('/public/images/header/search-glass.png') no-repeat 110px center;
+  background: url('/public/images/header/search-glass.png') no-repeat 160px center;
   position: relative;
   top: -9px;
   margin-left: 20px;
@@ -144,11 +157,9 @@ input.search {
 }
 .disclosure {
   display: inline-block;
-  background: url('/public/images/header/profile-disclosure.png') no-repeat center right;
+  background: url('/public/images/disclosure.png') no-repeat center right;
   width: 7px;
-  height: 32px;
-  line-height: 32px;
-  margin-left: 15px;
+  height: 7px;
 }
 .dropdown {
   position: absolute;
@@ -167,7 +178,7 @@ input.search {
   border-radius: 2px;
 }
 .dropdown a:hover {
-  background: #e6e8eb;
+  background: #c3c7d0;
 }
 .dropdown li {
   border-bottom: 1px solid #dee1e5;
@@ -197,15 +208,14 @@ a {
 .hero {
   background: url('/public/images/header/background.jpg');
   background-size: cover;
-  padding: 190px 0 0 0;
+  padding: 225px 0 0 0;
   margin-bottom: 50px;
 }
 .hero input {
-  font-family: 'Open Sans', sans-serif;
   width: 100%;
   border: 0;
   font-size: 2em;
-  font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
   border-left: 1px solid #fff;
   margin: 0 0 25px 0;
   padding: 0 0 0 5px;
@@ -235,13 +245,17 @@ a {
   right: 0;
 }
 .hero .toggle a {
-  padding: 15px 0;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  padding: 15px 10px;
   margin-right: 15px;
   display: inline-block;
   margin-bottom: -3px;
 }
-.hero .toggle a:last-of-type {
-  margin-right: 0;
+.hero .toggle a.action {
+  padding: 10px;
+  margin: 0;
+  background-position: right bottom;
 }
 .hero .toggle a:hover {
   -webkit-box-shadow: inset 0 -10px 0 -7px #00cc99;
@@ -287,6 +301,12 @@ a {
 .video.dark {
   background-image: url('/public/images/add-video.png');
 }
+.reply {
+  background-image: url('/public/images/reply.png');
+}
+.favorite {
+  background-image: url('/public/images/favorite.png');
+}
 .container.content {
   margin: 50px auto;
   padding-top: 70px;
@@ -296,7 +316,7 @@ a {
 }
 .post {
   border: 1px solid #dee1e5;
-  color: #abaeb0;
+  color: #70767f;
   padding: 25px;
   margin-bottom: 25px;
 }
@@ -307,11 +327,21 @@ a {
   width: 50%;
   margin: 0 auto 25px auto;
 }
+.post .title {
+  color: #3f454d;
+  font-size: 16px;
+  display: inline-block;
+}
 .post span,
 .post a,
 .post .time {
-  color: #e6e8eb;
+  color: #c3c7d0;
   text-decoration: none;
+}
+.post p {
+  clear: both;
+  padding-top: 15px;
+  font: 'Open Sans', sans-serif;
 }
 .post .actions {
   float: right;
@@ -320,11 +350,14 @@ a {
 .post .icon {
   margin-right: 15px;
 }
-.reply {
-  background-image: url('/public/images/reply.png');
+.post .expand {
+  margin-top: 25px;
+  display: inline-block;
+  font-size: 13px;
 }
-.favorite {
-  background-image: url('/public/images/favorite.png');
+.post .disclosure {
+  margin-left: 5px;
+  height: 10px;
 }
 .avatar {
   background: url('/public/images/post/avatars.png') no-repeat 0 0;
@@ -359,8 +392,8 @@ a {
   background-position: -187px -44px;
 }
 .button {
-  border: 1px solid #abaeb0;
-  color: #abaeb0;
+  border: 1px solid #70767f;
+  color: #70767f;
   padding: 5px;
   text-decoration: none;
   text-align: center;
@@ -461,15 +494,14 @@ form textarea {
   display: block;
   margin: 0;
   resize: none;
-  padding: 15px 0;
-  width: 100%;
+  padding: 15px;
+  border: 0;
 }
 .footer.navigation {
   background: #fff;
   font-size: 11px;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
   border-top: 1px solid #dee1e5;
   margin-top: 50px;
   padding: 25px;

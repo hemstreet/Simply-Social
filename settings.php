@@ -3,11 +3,11 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Simply Social</title>
-    <?php include('views/_head.php'); ?>
+    <?php include(__DIR__ . '/views/_head.php'); ?>
     <link rel="stylesheet" href="/public/css/flipswitch.css">
 </head>
 <body class="settings">
-<?php include('views/_navigation.php'); ?>
+<?php include(__DIR__ . '/views/_navigation.php'); ?>
     <div class="container content third">
         <form method="post" action="submit.php">
         <h2>Settings</h2>
@@ -90,6 +90,6 @@
         <input type="submit" class="button rounded submit"/>
         </form>
     </div>
-<?php include('views/_footer.php'); ?>
+<?php include(__DIR__ . '/views/_footer.php'); ?>
 </body>
 </html>

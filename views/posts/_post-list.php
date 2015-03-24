@@ -39,7 +39,7 @@ $hasComments = !!rand(0,1);
             <span class="title"><?php echo $names[$i]; ?></span>
         </div>
         <div class="col two actions">
-            <?php include($_SERVER['DOCUMENT_ROOT'] . '/views/posts/_post-details.php'); ?>
+            <?php include(__DIR__ . '/./_post-details.php'); ?>
         </div>
         <p>
             <?php echo $data[$i]; ?>
@@ -54,7 +54,7 @@ $hasComments = !!rand(0,1);
 </div>
 
 <?php if ($hasComments) { ?>
-    <?php include($_SERVER['DOCUMENT_ROOT'] . '/views/posts/_comments.php'); ?>
+    <?php include(__DIR__ . '/./_comments.php'); ?>
 <?php } ?>
 
 <div class="clearfix"></div>

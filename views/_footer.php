@@ -10,4 +10,4 @@
     </div>
 </div>
 
-<?php include('_dialog.php'); ?>
+<?php include(__DIR__ . '/./_dialog.php'); ?>

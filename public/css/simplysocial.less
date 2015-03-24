@@ -1,12 +1,15 @@
 .fontFamily (@name, @file) {
 	font-family: @name;
-	src: url(@file) format('opentype');
+	src: url('@{file}.eot') format('embedded-opentype'),
+	url('@{file}.woff') format('woff'),
+	url('@{file}.ttf')  format('truetype'),
+	url('@{file}.svg#@{name}') format('svg');
 }
 
-@font-face {.fontFamily('proxima light', '../fonts/proximaNova/ProximaNova-Light.otf');}
-@font-face {.fontFamily('proxima', '../fonts/proximaNova/ProximaNova-Regular.otf');}
-@font-face {.fontFamily('proxima semibold', '../fonts/proximaNova/ProximaNova-Semibold.otf');}
-@font-face {.fontFamily('proxima bold', '../fonts/proximaNova/ProximaNova-Bold.otf');}
+@font-face {.fontFamily('ProximaLight', '../fonts/ProximaNova-Light-webfont');}
+@font-face {.fontFamily('Proxima', '../fonts/ProximaNova-Regular-webfont');}
+@font-face {.fontFamily('ProximaSemibold', '../fonts/ProximaNova-Semibold-webfont');}
+@font-face {.fontFamily('ProximaBold', '../fonts/ProximaNova-Bold-webfont');}
 
 @primary : #00cc99;
 @darkPrimary : #00b286;
@@ -19,10 +22,10 @@
 @border: #DEE1E5;
 @submit: #00b286;
 
-@primaryFontLight: 'proxima light', sans-serif;
-@primaryFont: 'proxima', sans-serif;
-@primaryFontSemiBold: 'proxima semibold', sans-serif;
-@primaryFontBold: 'proxima bold', sans-serif;
+@primaryFontLight: 'ProximaLight', sans-serif;
+@primaryFont: 'Proxima', sans-serif;
+@primaryFontSemiBold: 'ProximaSemibold', sans-serif;
+@primaryFontBold: 'ProximaBold', sans-serif;
 
 body {
 	font-family: @primaryFont;
@@ -292,7 +295,7 @@ a {
 	}
 	.highlight {
 		padding: 35px;
-		width: 30%;
+		width: 36%;
 		margin: 0 auto;
 		background: rgba(57, 185, 152, 0.7);
 		* {
@@ -322,13 +325,18 @@ a {
 			margin-right: 15px;
 			display: inline-block;
 			margin-bottom: -3px;
+			color: #bec3cc;
 			&.action {
 				padding: 10px;
 				margin: 0;
 				background-position: right bottom;
 			}
+			&.current {
+				color: #fff;
+			}
 
 		}
+		a.current,
 		a:hover {
 			-webkit-box-shadow:inset 0 -10px 0 -7px  @primary;
 			box-shadow: inset 0 -10px 0 -7px @primary;
@@ -410,7 +418,7 @@ a {
 		margin-bottom: 0;
 	}
 	&.list {
-		width: 50%;
+		width: 60%;
 		margin: 0 auto 25px auto;
 	}
 	.title {
@@ -719,10 +727,15 @@ form {
 }
 
 @media only screen and (max-width: 850px) {
-	body.home.grid {
-		.col.two.third {
-			width: 100%;
-			margin-top: 25px;
+	body {
+		.dialog {
+			width: 75%;
+		}
+		.home.grid {
+			.col.two.third {
+				width: 100%;
+				margin-top: 25px;
+			}
 		}
 	}
 
@@ -774,9 +787,6 @@ form {
 
 @media only screen and (max-width: 600px) {
 	body {
-		.dialog {
-			width: 75%;
-		}
 		.hero .toggle {
 			width: 100%;
 			a {
@@ -819,11 +829,6 @@ form {
 
 @media only screen and (max-width: 468px) {
 
-	.navigation.primary {
-		.menu {
-			top: -15px;
-		}
-	}
 	.highlight a.action span {
 		display: none;
 	}

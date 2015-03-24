@@ -5,14 +5,14 @@ function printPost() {
         echo '<div class="post rounded list">';
         $post = rand(0,2);
         if( $post == 0) {
-            include('posts/_post-list.php');
+            include(__DIR__ . '/posts/_post-list.php');
         }
         else if($post == 1)
         {
-            include('posts/list/_post-photo.php');
+            include(__DIR__ . '/posts/list/_post-photo.php');
         }
         else {
-            include('posts/list/_post-video.php');
+            include(__DIR__ . '/posts/list/_post-video.php');
         }
 
         echo '</div>';

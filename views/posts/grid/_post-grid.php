@@ -53,12 +53,12 @@ $hasComments = !!rand(0,1);
         <?php } ?>
     </div>
     <div class="col two actions">
-        <?php include(__DIR__ . '/_post-details.php'); ?>
+        <?php include(__DIR__ . '/../_post-details.php'); ?>
     </div>
 </div>
 
 <?php if ($hasComments) { ?>
-    <?php include(__DIR__ . '/_comments.php'); ?>
+    <?php include(__DIR__ . '/../_comments.php'); ?>
 <?php } ?>
 
 <div class="clearfix"></div>

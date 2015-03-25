@@ -87,7 +87,7 @@
 
             </ul>
         </section>
-        <input type="submit" class="button rounded submit"/>
+        <input type="submit" value="Submit" class="button rounded submit"/>
         </form>
     </div>
 <?php include(__DIR__ . '/views/_footer.php'); ?>

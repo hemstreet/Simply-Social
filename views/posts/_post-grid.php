@@ -58,7 +58,7 @@ $hasComments = !!rand(0,1);
 </div>
 
 <?php if ($hasComments) { ?>
-    <?php include(__DIR__ . '/./_comments.php'); ?>
+    <?php include(__DIR__ . '/_comments.php'); ?>
 <?php } ?>
 
 <div class="clearfix"></div>

@@ -27,34 +27,30 @@ $names = [
 ];
 
 $i = rand(0, 9);
-$hasComments = !!rand(0,1);
 ?>
 
-<div class="col one third">
-    <div class="avatar rounded <?php echo $avatars[$i]; ?>"></div>
-</div>
-<div class="col two third">
-    <div class="content">
-        <div class="col two">
-            <span class="title"><?php echo $names[$i]; ?></span>
+<div class="clearfix"></div>
+
+<div class="social">
+    <div class="col one third">
+        <div class="avatar rounded <?php echo $avatars[$i]; ?>"></div>
+    </div>
+    <div class="col two third">
+        <div class="content">
+            <div class="col two">
+                <span class="title"><?php echo $names[$i]; ?></span>
+            </div>
+            <div class="col two actions">
+                <?php include(__DIR__ . '/../posts/_post-details.php'); ?>
+            </div>
+            <p>
+                <?php echo $data[$i]; ?>
+            </p>
         </div>
-        <div class="col two actions">
-            <?php include(__DIR__ . '/_post-details.php'); ?>
-        </div>
-        <p>
-            <?php echo $data[$i]; ?>
-        </p>
-        <?php if ($hasComments) { ?>
-            <a href="#" class="expand">
-                <span class="label">Expand</span>
-                <span class="profile disclosure"></span>
-            </a>
-        <?php } ?>
+    </div>
+    <div class="clearfix"></div>
+    <div class="comment">
+        <input class="rounded" type="text" placeholder="Reply..."/>
     </div>
 </div>
-
-<?php if ($hasComments) { ?>
-    <?php include(__DIR__ . '/_comments.php'); ?>
-<?php } ?>
-
 <div class="clearfix"></div>

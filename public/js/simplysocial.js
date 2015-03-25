@@ -9,9 +9,17 @@
                 this.openModal();
             }.bind(this));
 
-            $('.dialog .close, .dialog .submit').on('click', function(e) {
+            $('.dialog .close, .dialog .submit, .underlay').on('click', function(e) {
                 e.preventDefault();
                 this.closeModal();
+            }.bind(this));
+
+            $(document).keyup(function(e) {
+
+                // Check escape key
+                if (e.keyCode == 27) {
+                    this.closeModal();
+                }
             }.bind(this));
 
         },
@@ -31,7 +39,9 @@
         },
         closeModal : function() {
 
-            $('body').removeClass('modal');
+            var $body = $('body');
+
+            $body.removeClass('modal media view-media dialog-open');
 
         },
         toggleComments : function($post) {
@@ -47,23 +57,36 @@
         }
     };
 
-    $(document).keyup(function(e) {
-
-        // Check escape key
-        if (e.keyCode == 27) {
-            simplySocial.closeModal();
-        }
-    });
-
     $( document ).ready(function() {
 
         simplySocial.init();
 
-        $('.expand').on('click', function(e) {
-            e.preventDefault();
-            simplySocial.toggleComments($(this.closest('.post')));
+        if($('.expand').length > 0) {
+            $('.expand').on('click', function(e) {
+                e.preventDefault();
+                simplySocial.toggleComments($($(this).parents('.post').first()));
+            });
+        }
 
-        });
+        if($('.media').length > 0) {
+
+            $('.media').on('click', function(e) {
+                e.preventDefault();
+
+                var $post   = $($(this).parents('.post').first()),
+                    $dialog = $('.dialog'),
+                    media   = $(this).clone();
+
+                $('body').addClass('view-media');
+                $('.media', $dialog).remove();
+
+                media.prependTo($dialog);
+
+                simplySocial.openModal($post)
+
+            });
+
+        }
 
         // Check if we are on the home page
         if($('body.home').length > 0) {

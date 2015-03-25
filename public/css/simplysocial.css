@@ -30,10 +30,10 @@ body.grid .content .list {
 body.grid .post .actions {
   margin-top: 22px;
 }
-body.grid .col.one.third {
+body.grid .one.third {
   width: 20%;
 }
-body.grid .col.two.third {
+body.grid .two.third {
   width: 74%;
 }
 body.grid .media {
@@ -85,6 +85,33 @@ body.grid .social input {
   float: right;
   margin: 25px 0 0 0;
 }
+.dialog .media {
+  display: none;
+  margin: -25px -25px 0 -25px;
+}
+.dialog .actions {
+  margin-top: -35px;
+}
+body.view-media .create {
+  display: none;
+}
+body.view-media .dialog {
+  width: 50%;
+}
+body.view-media .dialog .media {
+  display: block;
+  height: 400px;
+}
+body.view-media .dialog .social {
+  margin: 0 -25px -25px -25px;
+  display: inline-block;
+}
+body.view-media .col.third.one {
+  width: 10%;
+}
+body.view-media .col.third.two {
+  width: 84%;
+}
 .message.create {
   width: 100%;
 }
@@ -93,7 +120,6 @@ body.grid .social input {
 }
 .modal .hero *,
 .modal .navigation *,
-.modal .content *,
 .modal .footer * {
   -webkit-filter: blur(2px);
   -moz-filter: blur(2px);
@@ -350,6 +376,30 @@ a {
 .home .content {
   padding-top: 0;
 }
+.actions {
+  float: right;
+  text-align: right;
+}
+.title {
+  color: #3f454d;
+  font-size: 16px;
+  display: inline-block;
+}
+span,
+a,
+.time {
+  color: #c3c7d0;
+  text-decoration: none;
+}
+p {
+  clear: both;
+  padding-top: 15px;
+  line-height: 25px;
+  font-family: 'Proxima', sans-serif;
+}
+.icon {
+  margin-right: 15px;
+}
 .post {
   border: 1px solid #dee1e5;
   color: #70767f;
@@ -363,30 +413,6 @@ a {
 .post.list {
   width: 60%;
   margin: 0 auto 25px auto;
-}
-.post .title {
-  color: #3f454d;
-  font-size: 16px;
-  display: inline-block;
-}
-.post span,
-.post a,
-.post .time {
-  color: #c3c7d0;
-  text-decoration: none;
-}
-.post p {
-  clear: both;
-  padding-top: 15px;
-  line-height: 25px;
-  font-family: 'Proxima', sans-serif;
-}
-.post .actions {
-  float: right;
-  text-align: right;
-}
-.post .icon {
-  margin-right: 15px;
 }
 .post .expand {
   margin-top: 25px;
@@ -414,17 +440,17 @@ a {
 .post.comments .social {
   display: inline-block;
 }
-.post .media {
+.media {
   background: url('/public/images/placeholder.jpg');
   background-size: cover;
   height: 300px;
   margin: 25px -25px -25px -25px;
   position: relative;
 }
-.post .media:hover {
+.media:hover {
   cursor: pointer;
 }
-.post .media.video::after {
+.media.video::after {
   display: block;
   content: '';
   background: rgba(0, 0, 0, 0.2) url('../images/post/video-play.png') no-repeat center;
@@ -434,7 +460,7 @@ a {
   bottom: 0;
   left: 0;
 }
-.post .media.clip {
+.media.clip {
   margin-bottom: 0;
 }
 .social {
@@ -536,6 +562,7 @@ section {
   padding: 10px;
   margin-bottom: 15px;
   font-size: 16px;
+  height: 20px;
   padding-left: 45px;
 }
 .settings .content input[type="password"].pass {
@@ -661,6 +688,9 @@ form textarea {
   body .post .actions {
     margin-top: 10px;
   }
+  body.view-media .dialog {
+    width: 85%;
+  }
   .settings .container.content.third {
     width: 75%;
   }
@@ -681,6 +711,9 @@ form textarea {
   body .post.grid,
   body .post.list {
     width: 75%;
+  }
+  body.view-media .dialog .actions {
+    margin-top: -25px;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -727,5 +760,10 @@ form textarea {
     width: 85%;
     margin: 0 auto;
     clear: both;
+  }
+}
+@media only screen and (max-width: 415px) {
+  input.search {
+    display: none;
   }
 }

@@ -1,4 +1,6 @@
-[Demo](http://simplysocial.jonhemstreet.com/)
+# Simply Social
+
+[Live Demo](http://simplysocial.jonhemstreet.com/)
 
 Data from posts is seeded on page load
 
